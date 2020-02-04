@@ -2,24 +2,24 @@
 class Manala < Formula
   desc "Let your projects plumbings up to date"
   homepage "https://github.com/manala/manala"
-  version "0.11.1"
+  version "0.12.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/manala/manala/releases/download/0.11.1/manala_Darwin_x86_64.tar.gz"
-    sha256 "1ee1dab75bb318fa364f5282e615ca38fbdc8c4c6bfa179ec13627346b294cba"
+    url "https://github.com/manala/manala/releases/download/0.12.0/manala_Darwin_x86_64.tar.gz"
+    sha256 "e8bdd4d985f1603a705ce67e6905013643f5cf137e42dd8182e557f275dd05d6"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/manala/manala/releases/download/0.11.1/manala_Linux_x86_64.tar.gz"
-      sha256 "526c3406f22aa3d0629cd053611fdc31104007d69ff38ab97fc0b05db9850042"
+      url "https://github.com/manala/manala/releases/download/0.12.0/manala_Linux_x86_64.tar.gz"
+      sha256 "7a9d140434616955950052e9a89045f18884517e45e6af174eaacc77a8e79946"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/manala/manala/releases/download/0.11.1/manala_Linux_arm64.tar.gz"
-        sha256 "c6c728a3f591ce5044d0a0e77f46008c43fc7ee8eebbb482b2b648c511f49714"
+        url "https://github.com/manala/manala/releases/download/0.12.0/manala_Linux_arm64.tar.gz"
+        sha256 "030f3282216e6351b84199f1fce482c5219477b7b6d9e3d0b1999468220e2ade"
       else
-        url "https://github.com/manala/manala/releases/download/0.11.1/manala_Linux_armv6.tar.gz"
-        sha256 "46d345a6ff931a3764c25e93a452d4b72b81d1a287e7057d40e7acb0399c6ad8"
+        url "https://github.com/manala/manala/releases/download/0.12.0/manala_Linux_armv6.tar.gz"
+        sha256 "edf481833286993d6dd4437195345d594f5f46b957f7bdfcd83de0ad0de434db"
       end
     end
   end
