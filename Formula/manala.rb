@@ -5,28 +5,33 @@
 class Manala < Formula
   desc "Let your project's plumbing up to date"
   homepage "https://github.com/manala/manala"
-  version "0.16.0"
+  version "0.16.1"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/manala/manala/releases/download/0.16.0/manala_Darwin_x86_64.tar.gz"
-    sha256 "f3f5837af45f703674d98a4f9a9966396f1165033f135528cd9d75ed91c3b43f"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/manala/manala/releases/download/0.16.1/manala_Darwin_x86_64.tar.gz"
+      sha256 "5426d7e9f47e27c5c963b909fe2790aed43c5241b398bea4fc7d71c3c247197a"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/manala/manala/releases/download/0.16.1/manala_Darwin_arm64.tar.gz"
+      sha256 "1262443483d518cf3962a6154559c3d416fef5a9d1a738a2fc2536ace2e1f204"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/manala/manala/releases/download/0.16.0/manala_Darwin_arm64.tar.gz"
-    sha256 "899662473e539b16430d9236c2c838f30c632503ac6be21523a5e8caf8e49813"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/manala/manala/releases/download/0.16.0/manala_Linux_x86_64.tar.gz"
-    sha256 "315678be2f524c5dec63e7065dbb50e7e2c7300b87e22d09f231bacecbc2a938"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/manala/manala/releases/download/0.16.0/manala_Linux_armv6.tar.gz"
-    sha256 "e363a37f636fcea9f9a1d40fe2cfec1e6175bb05e8a4faf48ae8e4f142f1c413"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/manala/manala/releases/download/0.16.0/manala_Linux_arm64.tar.gz"
-    sha256 "6700846441c07b026a1fdadb574130eaa117b43bedeb0308d389de64446c70c7"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/manala/manala/releases/download/0.16.1/manala_Linux_x86_64.tar.gz"
+      sha256 "e30d5b3c0817deae69fb865df67de1bcadc7edbd15bbed5b919d621e8f907136"
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/manala/manala/releases/download/0.16.1/manala_Linux_armv6.tar.gz"
+      sha256 "36b7e8617441f2198e27db665ea5324d1e71c89a337c66c4f04e2378c5c5e421"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/manala/manala/releases/download/0.16.1/manala_Linux_arm64.tar.gz"
+      sha256 "3489c80f371a9b053d5f2401e5f1ce0f63e1f91a3f48f9cca86cec4e65314a17"
+    end
   end
 
   def install
