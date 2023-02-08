@@ -5,20 +5,20 @@
 class Manala < Formula
   desc "Let your project's plumbing up to date"
   homepage "https://github.com/manala/manala"
-  version "0.18.1"
+  version "0.18.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/manala/manala/releases/download/0.18.1/manala_0.18.1_darwin_amd64.tar.gz"
-      sha256 "a7b1ccd30313242b490d8482ef923bc49be608430f8263b1a71a9887174bdec4"
+      url "https://github.com/manala/manala/releases/download/0.18.2/manala_0.18.2_darwin_amd64.tar.gz"
+      sha256 "29d3f5c04e329da0d4d98757e3f5071482fd4f65fc55974fa776d0e566fa7690"
 
       def install
         bin.install "manala"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/manala/manala/releases/download/0.18.1/manala_0.18.1_darwin_arm64.tar.gz"
-      sha256 "6cfe6afc07e8973619fa2a002edca8de106793a9867fa4bfb374f4a388f7664e"
+      url "https://github.com/manala/manala/releases/download/0.18.2/manala_0.18.2_darwin_arm64.tar.gz"
+      sha256 "f936afca81670626d6a5f9b66462972dd5b29c113abf29e18ebc969e3892ac23"
 
       def install
         bin.install "manala"
@@ -28,24 +28,24 @@ class Manala < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/manala/manala/releases/download/0.18.1/manala_0.18.1_linux_arm64.tar.gz"
-      sha256 "aa1895aadfeb2e1d7d7589d0d49445fa5a9e6177d74a17d1b2b36720c3e09a64"
+      url "https://github.com/manala/manala/releases/download/0.18.2/manala_0.18.2_linux_arm64.tar.gz"
+      sha256 "3ba42f167b34098c36fb16192053b7e79800bef42d01990eafe172ccd682b1d1"
 
       def install
         bin.install "manala"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/manala/manala/releases/download/0.18.1/manala_0.18.1_linux_armv6.tar.gz"
-      sha256 "2a91a857827e32e30e667d2ade7ccc92da837b17ef48dc3824e3fcd14185458b"
+      url "https://github.com/manala/manala/releases/download/0.18.2/manala_0.18.2_linux_armv6.tar.gz"
+      sha256 "8f03f8ae7b626220131d1620f2b8a2d3926336bdfe6d2c61980cb62777c81935"
 
       def install
         bin.install "manala"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/manala/manala/releases/download/0.18.1/manala_0.18.1_linux_amd64.tar.gz"
-      sha256 "38066e59aa315102780fdc7f85b092852b1cf33c31357980aca332d21968847e"
+      url "https://github.com/manala/manala/releases/download/0.18.2/manala_0.18.2_linux_amd64.tar.gz"
+      sha256 "f0fc74a1a187a81e30ecc29df33990c8baa0cd617abd3b20d97fd064a2c0cb75"
 
       def install
         bin.install "manala"
